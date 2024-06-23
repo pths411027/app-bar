@@ -1,1 +1,8 @@
-export const apps = ["facebook", "telegram", "youtube", "github", "twitch"];
+export const apps = [
+  "discord",
+  "github",
+  "twitch",
+  "twitter",
+  "youtube",
+  "visual",
+];
