@@ -1,10 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Page.module.css";
 import { apps } from "./config";
 
 export default function Home() {
   const [hoverIndex, setHoverIndex] = useState(-1);
+  const [deHoverIndex, setDeHoverIndex] = useState(-1);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDeHoverIndex(hoverIndex);
+    }, 100);
+  }, [hoverIndex]);
 
   return (
     <main className={styles.container}>
@@ -12,6 +19,7 @@ export default function Home() {
       <div className={styles.bar_container}>
         {apps.map((app, index) => {
           const isHovered = hoverIndex === index;
+          const isDeHovered = deHoverIndex === index;
           return (
             <div
               key={index}
@@ -19,13 +27,13 @@ export default function Home() {
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(-1)}
             >
-              <i
-                className={app}
+              <img
+                src={isDeHovered ? `/img_hover/${app}.png` : `/img/${app}.png`}
                 style={{
                   marginTop: isHovered ? "-10px" : "0px",
                   color: isHovered ? "#fff" : "#000",
                 }}
-              ></i>
+              ></img>
             </div>
           );
         })}
