@@ -13,7 +13,7 @@ export default function RootLayout({
       <head>
         <title>App Bar</title>
         <link rel="icon" type="image/x-icon" href="/favicon.io" />
-        <script src="https://kit.fontawesome.com/49bdd08b45.js"></script>
+        {/* <script src="https://kit.fontawesome.com/49bdd08b45.js"></script> */}
         <meta name="description" content="App Bar effect" />
       </head>
       <body className={inter.className}>{children}</body>
