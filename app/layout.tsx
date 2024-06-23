@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-
+import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -12,9 +12,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>App Dock</title>
+        <title>App Bar</title>
         <link rel="icon" type="image/x-icon" href="/favicon.io" />
-        <meta name="description" content="App Dock like mac os" />
+        <script src="https://kit.fontawesome.com/49bdd08b45.js"></script>
+        <meta name="description" content="App Bar effect" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
